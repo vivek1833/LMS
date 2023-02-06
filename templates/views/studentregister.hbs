@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{>header}}
+
+<body>
+
+    <div class="student-login-body">
+        <div class="text-center">
+            <img id="image-fix-login" src="/images/logo-transparent.png" style="margin-top: 4rem;" alt="logo">
+            <div class="text-center text-white display-6 lms">
+                Learning Management System
+            </div>
+        </div>
+
+        <!-- Registration form -->
+        <div class="container">
+            <form class="row g-3 login-form fix-form" method="post" action="/register">
+                <h1 class="text-center overflow-hidden">Register</h1>
+                {{#if message}}
+                <div class="alert alert-{{ status }} col-md-3" role="alert">
+                    {{ message }}
+                </div>
+                {{/if}}
+                <div class="col-md-6">
+                    <input type="text" class="form-control" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="col-md-6">
+                    <input type="email" class="form-control" name="email" placeholder="Enter email" required>
+                </div>
+                <div class="col-md-6">
+                    <input type="tel" name="phone" class="form-control" id="phone" placeholder="Enter phone number"
+                        required>
+                </div>
+                <div class="col-md-6">
+                    <select name="course" class="form-select" required>
+                        <option selected> Choose your course </option>
+                        <option> B.Tech </option>
+                        <option> B.Sc </option>
+                        <option> MBA </option>
+                    </select>
+                </div>
+                <div class="col-md-6" required>
+                    <input type="password" class="form-control" name="password" placeholder="Enter password">
+                </div>
+                <div class="col-md-6">
+                    <input type="password" class="form-control" name="confirmpassword" placeholder="Confirm password"
+                        required>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

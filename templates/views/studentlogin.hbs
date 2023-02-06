@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+
+{{>header}}
+
+<body>
+    <div class="student-login-body">
+        <div class="text-center">
+            <img id="image-fix-login" src="/images/logo-transparent.png" style="margin-top: 4.5rem;" alt="logo">
+            <div class="text-center text-white display-6 lms">
+                Learning Management System
+            </div>
+        </div>
+
+        <!-- login form -->
+        <div class="container fix-form mt-4">
+            <form class="login-form mt-3 mt-md-1" method="post" action="/login">
+                <h1 class="text-center overflow-hidden"> Login </h1>
+                <p class="text-center"> Welcome to University Information Management System </p>
+                {{#if message}}
+                <div class="alert alert-{{ status }}" role="alert">
+                    <i class="bi bi-exclamation-circle"></i> {{ message }}
+                </div>
+                {{/if}}
+                <div class="form-group mt-3">
+                    <input type="email" class="form-control" name="email" placeholder="Enter Email" required>
+                </div>
+                <div class="form-group mb-2">
+                    <input type="password" class="form-control" name="password" placeholder="Enter Password" required>
+                </div>
+                <button type="submit" class="btn btn-primary"> Login </button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+{{>header}}
+
+<body>
+  <!-- navbar  -->
+  {{>navbar}}
+
+  <!-- Modal for notifications -->
+  {{>notification}}
+
+  <!-- Modal for dashboard -->
+  {{>dashboard}}
+
+  <!-- Modal for Grades  -->
+  {{>grades}}
+
+  <!-- Modal for Messages  -->
+  {{>messages}}
+
+  <!-- slider  -->
+  {{>slider}}
+
+  <!-- main content -->
+  <div class="container-fluid bg-light">
+    <h5 id="courses" class="text-uppercase display-5 text-center mt-5 p-3"> Subjects for {{ course }} </h5>
+  </div>
+
+  <div class="container card-content mb-5">
+    <div class="row row-cols-1 row-cols-md-3 g-5 mt-1">
+      {{#each subs}}
+      <div class="col mt-3">
+        <div class="card">
+          <img src="https://source.unsplash.com/800x400?{{ this.subname }}" class="card-img-top" alt="image">
+          <div class="card-body">
+            <h5 class="card-title"> {{ this.subname }} </h5>
+            <p class="card-text">
+              {{ this.subdesc }}
+            </p>
+            <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasRight" role="button"
+              aria-controls="offcanvasExample">
+              Go To Course
+            </a>
+            {{>coursePage}}
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+
+  <!-- footer -->
+  {{>footer}}
+</body>
+
+</html>

@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
+
+:root {
+    --primary: white;
+    --secondary: red;
+    --footer: black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/*********************************
+    INDEX PAGE - ALL LOGIN
+*********************************/
+.login-header {
+    background: whitesmoke;
+}
+
+.login-header button {
+    background: var(--secondary);
+    border: 1px solid var(--secondary);
+    outline: none;
+    color: var(--primary);
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 20px;
+    width: fit-content;
+}
+
+.login-header button:hover {
+    background: var(--primary);
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+}
+
+.login-header img {
+    height: 30px;
+    width: fit-content;
+    margin-left: 1rem;
+}
+
+#image-fix-login {
+    height: 50px;
+    width: auto;
+}
+
+.lms {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0.5rem 0;
+}
+
+/*********************************
+    STUDENT LOGIN
+*********************************/
+.student-login-body {
+    background: url('/images/bg-image-blur.png');
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fix-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.student-login-body .login-form {
+    margin: 0 auto;
+    padding: 2rem;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+}
+
+.student-login-body .login-form input,
+select {
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid white;
+    margin-bottom: 1rem;
+}
+
+.student-login-body .login-form button {
+    background: var(--secondary);
+    border: 1px solid var(--secondary);
+    outline: none;
+    color: var(--primary);
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 20px;
+    width: max-content;
+    margin: 0 auto;
+    display: block;
+    padding: 0.4rem 1rem;
+}
+
+.student-login-body .login-form button:hover {
+    background: var(--primary);
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+}
+
+.alert-danger {
+    background: red;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    padding: 0.4rem 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.alert-success {
+    background: green;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    padding: 0.4rem 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/*********************************
+    STUDENT DASHBOARD
+*********************************/
+.navbar {
+    background-color: whitesmoke;
+    padding: 0 2rem;
+}
+
+.navbar ul {
+    background-color: whitesmoke;
+}
+
+.nav-item button {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.navbar img {
+    height: 30px;
+    width: fit-content;
+    margin-left: 1rem;
+    margin-top: 10px;
+    margin-bottom: -5px;
+}
+
+.navbar i {
+    font-size: 1.2rem;
+    margin: 0 0.4rem;
+}
+
+.navbar a:hover,
+.nav-item button:hover 
+{
+    color: var(--secondary);
+}
+
+.student-carousel img {
+    margin: 0 auto;
+    height: 70vh;
+    width: 90%;
+}
+
+.student-carousel h5 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 1rem 0;
+}
+
+.card-content {
+    border-radius: 20px;
+    width: 90%;
+}
+
+.card-content h5 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.card-content p {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.card-content a {
+    background: var(--secondary);
+    border: 1px solid var(--secondary);
+    outline: none;
+    color: var(--primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 20px;
+    width: max-content;
+    margin: 0 auto;
+    display: block;
+    padding: 0.4rem 1rem;
+    width: 100%;
+}
+
+.card-content a:hover {
+    background: var(--primary);
+    color: var(--secondary);
+    border: 1px solid var(--secondary);
+}
+
+#offcanvasRight {
+    width: 85%;
+}
+
+@media (max-width: 575px) {
+
+    /*****************************
+        INDEX PAGE - ALL LOGIN
+    *****************************/
+    .login-header img {
+        height: 30px;
+    }
+
+    .login-header button {
+        font-size: 0.8rem;
+    }
+
+    /*****************************
+        STUDENT LOGIN
+    *****************************/
+    .student-login-body .login-form {
+        padding: 1rem;
+    }
+
+    .student-login-body .login-form input,
+    select {
+        padding: 0.3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .student-login-body .login-form button {
+        padding: 0.3rem 0.5rem;
+    }
+
+    #image-fix-login {
+        height: 40px;
+        width: auto;
+    }
+
+    .lms {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin: 0.5rem 0;
+    }
+
+    /*****************************
+        STUDENT DASHBOARD
+    *****************************/
+    .navbar {
+        padding: 0 1rem 0 0;
+    }
+
+    .navbar button {
+        font-size: 0.8rem;
+    }
+
+    .navbar img {
+        height: 30px;
+    }
+
+    .navbar i {
+        font-size: 1rem;
+    }
+
+    .student-carousel img {
+        height: 38vh;
+        width: 100%;
+    }
+
+    .student-carousel h5 {
+        font-size: 1rem;
+    }
+
+    .student-carousel p {
+        font-size: 10px;
+    }
+
+    .card-content h5 {
+        font-size: 1rem;
+    }
+
+    .card-content p {
+        font-size: 10px;
+    }
+
+    .card-content button {
+        font-size: 10px;
+    }
+
+    #offcanvasRight {
+        width: 100%;
+    }
+}
+
+/*****************************
+    FOOTER
+*****************************/
+.footer {
+    background: var(--footer);
+    color: black
+}
+
+.footer i {
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    color: white;
+}
