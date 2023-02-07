@@ -60,7 +60,6 @@
 *********************************/
 .student-login-body {
     background: url('/images/bg-image-blur.png');
-    height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -72,6 +71,10 @@
     align-items: center;
 }
 
+form label {
+    color: black
+}
+
 .student-login-body .login-form {
     margin: 0 auto;
     padding: 2rem;
@@ -80,14 +83,14 @@
     border-radius: 20px;
 }
 
-.student-login-body .login-form input,
+.student-login-body .form-control,
 select {
     width: 100%;
-    padding: 0.5rem;
     border: none;
     outline: none;
-    border-bottom: 1px solid white;
     margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 20px;
 }
 
 .student-login-body .login-form button {
@@ -168,8 +171,7 @@ select {
 }
 
 .navbar a:hover,
-.nav-item button:hover 
-{
+.nav-item button:hover {
     color: var(--secondary);
 }
 
@@ -225,6 +227,8 @@ select {
     width: 85%;
 }
 
+
+
 @media (max-width: 575px) {
 
     /*****************************
@@ -238,6 +242,10 @@ select {
         font-size: 0.8rem;
     }
 
+    .login-form {
+        width: 100%;
+    }
+
     /*****************************
         STUDENT LOGIN
     *****************************/
@@ -245,9 +253,9 @@ select {
         padding: 1rem;
     }
 
-    .student-login-body .login-form input,
+    .student-login-body .form-control,
     select {
-        padding: 0.3rem;
+        padding: 1rem;
         margin-bottom: 0.5rem;
     }
 

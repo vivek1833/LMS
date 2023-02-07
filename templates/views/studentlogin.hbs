@@ -4,34 +4,57 @@
 {{>header}}
 
 <body>
-    <div class="student-login-body">
+    <div class="student-login-body" style="height: 100vh;">
         <div class="text-center">
-            <img id="image-fix-login" src="/images/logo-transparent.png" style="margin-top: 4.5rem;" alt="logo">
+            <img id="image-fix-login" src="/images/logo-transparent.png" style="margin-top: 3rem;" alt="logo">
             <div class="text-center text-white display-6 lms">
                 Learning Management System
             </div>
         </div>
 
         <!-- login form -->
-        <div class="container fix-form mt-4">
+        <div class="container fix-form">
             <form class="login-form mt-3 mt-md-1" method="post" action="/login">
                 <h1 class="text-center overflow-hidden"> Login </h1>
-                <p class="text-center"> Welcome to University Information Management System </p>
+                <p class="text-center"> Welcome to University Information Management System
+                </p>
+                <hr>
                 {{#if message}}
                 <div class="alert alert-{{ status }}" role="alert">
                     <i class="bi bi-exclamation-circle"></i> {{ message }}
                 </div>
                 {{/if}}
-                <div class="form-group mt-3">
-                    <input type="email" class="form-control" name="email" placeholder="Enter Email" required>
+
+                <div class="form-floating">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="email">
+                    <label for="email"> Enter Email </label>
                 </div>
-                <div class="form-group mb-2">
-                    <input type="password" class="form-control" name="password" placeholder="Enter Password" required>
+
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                    <label for="password"> Enter Password </label>
                 </div>
+
+                <div class="mb-3 ms-1 form-check">
+                    <input type="checkbox" class="form-check-input" id="showPassword" onclick="showPassFunc()">
+                    <label class="form-check-label text-light" for="showPassword"> Show Password </label>
+                </div>
+
                 <button type="submit" class="btn btn-primary"> Login </button>
             </form>
         </div>
     </div>
 </body>
+
+<script>
+    function showPassFunc() {
+        var x = document.getElementById("password");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
 
 </html>

@@ -7,7 +7,7 @@
 
     <div class="student-login-body">
         <div class="text-center">
-            <img id="image-fix-login" src="/images/logo-transparent.png" style="margin-top: 4rem;" alt="logo">
+            <img id="image-fix-login" src="/images/logo-transparent.png" style="margin-top: 2rem;" alt="logo">
             <div class="text-center text-white display-6 lms">
                 Learning Management System
             </div>
@@ -15,45 +15,72 @@
 
         <!-- Registration form -->
         <div class="container">
-            <form class="row g-3 login-form fix-form" method="post" action="/register">
+            <form class="row g-3 login-form" method="post" action="/register">
                 <h1 class="text-center overflow-hidden">Register</h1>
+                <p class="text-center"> Welcome to University Information Management System
+                </p>
+                <hr>
                 {{#if message}}
-                <div class="alert alert-{{ status }} col-md-3" role="alert">
-                    {{ message }}
+                <div class="alert alert-{{ status }} col-md-12" role="alert">
+                    <i class="bi bi-exclamation-circle"></i> {{ message }}
                 </div>
                 {{/if}}
-                <div class="col-md-6">
-                    <input type="text" class="form-control" name="name" placeholder="Enter your name" required>
+
+                <div class="form-floating col-md-6">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="name">
+                    <label for="name" class="px-4" required> Enter your name </label>
+                </div>
+                <div class="form-floating col-md-6">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="email">
+                    <label for="email" class="px-4" required> Enter Email </label>
+                </div>
+                <div class="form-floating col-md-6">
+                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="phone">
+                    <label for="phone" class="px-4" required> Enter phone no. </label>
                 </div>
                 <div class="col-md-6">
-                    <input type="email" class="form-control" name="email" placeholder="Enter email" required>
-                </div>
-                <div class="col-md-6">
-                    <input type="tel" name="phone" class="form-control" id="phone" placeholder="Enter phone number"
-                        required>
-                </div>
-                <div class="col-md-6">
-                    <select name="course" class="form-select" required>
+                    <select name="course" class="form-select form-control" required>
                         <option selected> Choose your course </option>
                         <option> B.Tech </option>
                         <option> B.Sc </option>
                         <option> MBA </option>
                     </select>
                 </div>
-                <div class="col-md-6" required>
-                    <input type="password" class="form-control" name="password" placeholder="Enter password">
-                </div>
-                <div class="col-md-6">
-                    <input type="password" class="form-control" name="confirmpassword" placeholder="Confirm password"
+                <div class="form-floating col-md-6">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="password"
                         required>
+                    <label for="password" class="px-4"> Enter password </label>
                 </div>
-                <div>
-                    <button type="submit" class="btn btn-primary">Register</button>
+                <div class="form-floating col-md-6">
+                    <input type="password" class="form-control" id="confirmpassword" name="confirmpassword"
+                        placeholder="confirmpassword" required>
+                    <label for="confirmpassword" class="px-4"> Confirm Password </label>
                 </div>
+                <div class="mb-3 ms-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="showPassword" onclick="showPassFunc()">
+                    <label class="form-check-label text-light" for="showPassword"> Show Password </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary"> Register </button>
+                <p class="text-center"> Already have an account? <a href="/studentlogin"> Login </a> </p>
             </form>
         </div>
     </div>
 
 </body>
+
+<script>
+    function showPassFunc() {
+        var x = document.getElementById("password");
+        var y = document.getElementById("confirmpassword");
+        if (x.type === "password") {
+            x.type = "text";
+            y.type = "text"
+        } else {
+            x.type = "password";
+            y.type = "password";
+        }
+    }
+</script>
 
 </html>
